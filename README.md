@@ -33,3 +33,14 @@ docker容器使用的,主要为了测试docker环境的文件读写函数 默认
 ```bash
 docker
 ```
+
+
+# jiebago.go
+
+go语言环境下;,调用jieba库进行关键字分析
+
+```bash
+go run jieba.go
+```
+
+
