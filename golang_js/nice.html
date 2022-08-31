@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="static/img/favicon.png" type="image/png">
+	<title>群图</title>
+ 
+	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">QunTool</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							 <a href="#">首页</a>
+						</li>
+						<li>
+							 <a href="#">注册</a>
+						</li>
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a href="#">Action</a>
+								</li>
+								<li>
+									 <a href="#">Another action</a>
+								</li>
+								<li>
+									 <a href="#">Something else here</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									 <a href="#">Separated link</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									 <a href="#">One more separated link</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div> <button type="submit" class="btn btn-default" onclick="alert('本来无一物，何处惹尘埃！');">站内搜索</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							 <a href="#">Link</a>
+						</li>
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a href="#">Action</a>
+								</li>
+								<li>
+									 <a href="#">Another action</a>
+								</li>
+								<li>
+									 <a href="#">Something else here</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#">Separated link</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+			<div class="jumbotron">
+				<h1 id = "ptitle">
+					你好，世界！ 
+				</h1>
+				<p id="pcontent">
+					不知道放点啥好，大家谢欢放啥就随便写点啥吧！
+				</p>
+				<p>
+					 <a class="btn btn-primary btn-large" href="#" onclick="Get_Zha();">刷新</a>
+				</p>
+			</div>
+
+
+
+			<div class="row" id="NewsID">
+			<!-- 	
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdn-kdt-img.qbox.me%2Fupload_files%2F2016%2F04%2F29%2FFiXtrDYrebUSMddUKd9ZKd3uJzHm.jpg" />
+						<div class="caption">
+							<h3>
+								Thumbnail label
+							</h3>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+							<p>
+								   <a class="btn" href="#">所有的发明都是为了懒人</a>
+							</p>
+						</div>
+					</div>
+				</div>  
+				 -->
+			</div>
+		</div>
+	</div>
+</div>
+			javascript:;
+			<script type="text/javascript">
+			    
+    			 function Get_SubText(a, iLen) {
+                    var b = "";
+                    if(a.length>iLen){
+                        b = a.substr(0,iLen-2) + "...";
+                    }
+                    else{
+                        b = a;
+                    }
+                   return b;
+                }
+    
+			    function Add_Title(in_img, in_title,in_content, in_btntxt, in_url) {
+						let col_md_4= document.createElement('div'); 
+							col_md_4.setAttribute("class","col-md-4");
+
+						var thumbnaila = document.createElement("div");//col-md-4
+							thumbnaila.setAttribute("class","thumbnail");
+							col_md_4.appendChild(thumbnaila);
+
+                        var thumbnail = document.createElement("a");//a
+							//a.setAttribute("class", "btn btn-primary");
+							thumbnail.setAttribute("href", in_url);
+							//thumbnail.innerHTML = in_btntxt;
+							thumbnail.target = "_blank";
+							thumbnaila.appendChild(thumbnail);
+							
+						var img = document.createElement("img");//img
+							img.setAttribute("src",in_img);
+							img.style="height:180px;";
+							thumbnail.appendChild(img);
+						
+						var caption = document.createElement("div");//caption
+							caption.setAttribute("class","caption");
+							thumbnail.appendChild(caption);
+
+						var H3 = document.createElement("H3");//H3
+							H3.innerText=in_title;
+							thumbnail.appendChild(H3);
+
+						var p = document.createElement("p");//p
+							p.innerText=Get_SubText(in_content,24);
+							thumbnail.appendChild(p);
+
+						var p1 = document.createElement("p");//p1
+							thumbnail.appendChild(p1);
+
+						
+							thumbnail.appendChild(p1);
+
+						let NewsID = document.getElementById("NewsID");
+            				NewsID.appendChild(col_md_4);
+			    }
+ 
+
+               function GetNews(){
+               	var url = "https://api2.firefoxchina.cn/home/news_cnxh.json?v=20211221155704";
+               	 $.get(url,function(data,status){
+               	 	if(status == "success"){
+               	 		//console.log(JSON.stringify(data));
+               	 		//alert(status + ":" + JSON.stringify(data));
+               	 		var iCount =0;
+               	 		try{
+               	 			iCount = data["data"]["data"].length;
+               	 		}
+               	 		catch (e){
+               	 			console.log("数据错误!");
+               	 			return;
+               	 		}
+               	 		for (var i=0; i<iCount; i++) {
+               	 			obj = data["data"]["data"][i];
+               	 			//console.log(obj);
+               	 			//Add_Title(img, title,content, btntxt, url)
+               	 			Add_Title(obj["imgurl_https"], obj["source_from"],obj["title"],"明天会更好", obj["url"]);
+               	 		}
+               	 	}
+               	});
+               }
+    
+            function Show_Zha(title, content){
+                $("#ptitle").text(content);
+                $("#pcontent").text(title);
+                
+            }
+            function Get_Zha(){
+                //选择输出分类[hitokoto|en|social|soup|fart|zha]，为空默认hitokoto
+                var url = "https://api.uixsj.cn/hitokoto/get?type=zha&code=json";
+                 $.get(url,function(data,status){
+               	 	if(status == "success"){
+               	 	    console.log(data);
+               	 	    if(data["code"] == 200){
+               	 	       Show_Zha("----群图语录", data["content"]);
+               	 	    }
+               	 	}
+               	 	});
+            }
+
+			//滚动条在Y轴上的滚动距离
+			function getScrollTop(){
+			　　var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+			　　if(document.body){
+			　　　　bodyScrollTop = document.body.scrollTop;
+			　　}
+			　　if(document.documentElement){
+			　　　　documentScrollTop = document.documentElement.scrollTop;
+			　　}
+			　　scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+			　　return scrollTop;
+			}
+			 
+			//文档的总高度
+			 
+			function getScrollHeight(){
+			　　var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+			　　if(document.body){
+			　　　　bodyScrollHeight = document.body.scrollHeight;
+			　　}
+			　　if(document.documentElement){
+			　　　　documentScrollHeight = document.documentElement.scrollHeight;
+			　　}
+			　　scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+			　　return scrollHeight;
+			}
+			 
+			//浏览器视口的高度
+			 
+			function getWindowHeight(){
+			　　var windowHeight = 0;
+			　　if(document.compatMode == "CSS1Compat"){
+			　　　　windowHeight = document.documentElement.clientHeight;
+			　　}else{
+			　　　　windowHeight = document.body.clientHeight;
+			　　}
+			　　return windowHeight;
+			}
+
+
+			window.onscroll = function(){
+			　　if(getScrollTop() + getWindowHeight() == getScrollHeight()){
+			　　　　GetNews();
+			　　　　Get_Zha();
+			　　}
+			};
+			window.onload=function(){
+                GetNews();
+                //Show_Zha("渣男语录", "男人都是大猪蹄子");
+                Get_Zha();
+            }
+
+			</script>
+
+</body>
+</html>
