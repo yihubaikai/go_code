@@ -20,10 +20,16 @@ go get -v -u github.com/yihubaikai/gopublic
 ```
 
 
-# golang
+# http3.go
 
-http的方式测试 WriteFile 的用法， ReadFile 读取文件末尾几个字符串
+http简易服务器,默认开启9566端口
 ```bash
-写入: http://127.0.0.1:8080/
-读取:http://127.0.0.1:8080/show
+nohup ./http 80>/device/null 2>&1 & 
+```
+
+# docker.go
+
+docker容器使用的,主要为了测试docker环境的文件读写函数 默认使用8080
+```bash
+docker
 ```
